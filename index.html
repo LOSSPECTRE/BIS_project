@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Your School Name</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <header>
+      <div class="logo-container">
+        <img
+          src="images/school_logo-removebg-preview.png"
+          alt="School Logo"
+          class="logo"
+        />
+        <h1>British International School</h1>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#admissions">Admissions</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section id="home" class="hero">
+      <div class="slides">
+        <div class="slide active"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+      </div>
+
+      <div class="hero-content">
+        
+      </div>
+    </section>
+    <section id="why-choose-us">
+    <h2>Why Choose Us</h2>
+
+    <div class="why-container">
+
+        <div class="why-card">
+            <div class="icon">📚</div>
+            <h3>Academic Excellence</h3>
+            <p>We provide a rigorous and well-structured curriculum designed to help students achieve their highest potential.</p>
+        </div>
+
+        <div class="why-card">
+            <div class="icon">👩‍🏫</div>
+            <h3>Experienced Teachers</h3>
+            <p>Our qualified and passionate educators ensure every student receives personal attention and guidance.</p>
+        </div>
+
+        <div class="why-card">
+            <div class="icon">⚽</div>
+            <h3>Sports & Activities</h3>
+            <p>We promote physical development and teamwork through a wide range of sports and extracurricular activities.</p>
+        </div>
+
+        <div class="why-card">
+            <div class="icon">🌍</div>
+            <h3>Global Perspective</h3>
+            <p>Our programs prepare students to thrive in a global environment with confidence and leadership skills.</p>
+        </div>
+
+    </div>
+</section>
+
+
+    <section id="about">
+      <h2>About Us</h2>
+      <div class="cards">
+        <div class="card">
+          <p>
+            Our school is dedicated to providing quality education and fostering
+            student growth.
+          </p>
+        </div>
+        <div class="card">
+          <p>
+            Founded in 20XX, we have proudly served our community with
+            excellence.
+          </p>
+        </div>
+      </div>
+<section id="admissions">
+    <h2>Admissions</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Application Form</h3>
+            <p>Submit your completed application form online or in person.</p>
+        </div>
+        <div class="card">
+            <h3>Academic Records</h3>
+            <p>Provide past academic records and transcripts for evaluation.</p>
+        </div>
+        <div class="card">
+            <h3>Interview</h3>
+            <p>Attend a short interview (if required) to discuss your goals.</p>
+        </div>
+        <div class="card">
+            <h3>Enrollment</h3>
+            <p>Once accepted, complete the enrollment process to join our school.</p>
+        </div>
+    </div>
+</section>
+
+
+<section id="news">
+    <h2>Latest News</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Sports Day</h3>
+            <p>Our annual Sports Day will be held on March 15 with fun competitions for all students.</p>
+        </div>
+        <div class="card">
+            <h3>Science Fair</h3>
+            <p>Students showcase innovative projects and experiments in our school Science Fair.</p>
+        </div>
+        <div class="card">
+            <h3>Art Exhibition</h3>
+            <p>Creative student artworks will be displayed in the school auditorium next month.</p>
+        </div>
+        <div class="card">
+            <h3>Holiday Notice</h3>
+            <p>School will be closed on April 10-12 for the national holiday celebrations.</p>
+        </div>
+    </div>
+</section>
+
+
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Email: info@yourschool.com</p>
+      <p>Phone: +123 456 7890</p>
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+    <footer>
+      <p>© 2026 Your School Name. All Rights Reserved.</p>
+    </footer>
+    <script>
+      const slides = document.querySelectorAll(".slide");
+      let current = 0;
+
+      function nextSlide() {
+        slides[current].classList.remove("active");
+        current = (current + 1) % slides.length;
+        slides[current].classList.add("active");
+      }
+
+      setInterval(nextSlide, 4000);
+    </script>
+  </body>
+</html>
