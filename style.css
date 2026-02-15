@@ -12,32 +12,16 @@ body {
   width: 100%;
   overflow-x: hidden;
   padding: 0px;
-  padding-top: 120px;
+  padding-top: px;
 }
 :root {
-  --header-h: 120px;
+  --header-h: 90px;
 }
-
-header {
-  height: var(--header-h);
-}
-
 body {
   padding-top: var(--header-h);
 }
-
-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: purple;
-  color: white;
-  text-align: center;
-  z-index: 1000;
-  padding: 20px;
-  height: 120px;
-  left: 0;
-  right: 0;
+.topbar {
+  height: var(--header-h);
 }
 
 .logo-container {
@@ -51,34 +35,6 @@ header {
 .logo {
   height: 60px;
   width: auto;
-}
-
-nav ul {
-  list-style: none;
-  margin-top: 10px;
-}
-
-nav ul li {
-  display: inline;
-  margin: 0 15px;
-}
-
-nav ul li a {
-  color: white;
-  margin-bottom: 15px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 15px;
-  border-bottom-color: white;
-  display: inline-block;
-  transition:
-    transform 0.3s ease,
-    color 0.3s ease;
-}
-nav ul li a:hover {
-  transform: scale(1.05);
-  color: #1e3a8a;
-  border-bottom: 2px solid white;
 }
 
 .hero {
@@ -131,6 +87,10 @@ nav ul li a:hover {
 section {
   padding: 60px 20px;
   text-align: center;
+}
+.hero {
+  padding: 0; /* remove section padding */
+  text-align: left; /* optional */
 }
 
 .cards {
@@ -290,6 +250,68 @@ footer {
   font-size: 16px;
   letter-spacing: 1px;
 }
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+  background: purple;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.nav-inner {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  text-decoration: none;
+}
+
+.brand-text {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 10px 8px;
+  border-bottom: 2px solid transparent; /* prevents wobble */
+}
+
+.nav-links a:hover {
+  border-bottom-color: white;
+}
+
+.nav-cta {
+  background: white;
+  color: purple !important;
+  border-radius: 8px;
+  padding: 10px 14px;
+  border-bottom: none !important;
+}
+
 html {
   scroll-behavior: smooth;
   overflow-y: scroll;
