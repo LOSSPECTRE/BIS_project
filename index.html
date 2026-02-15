@@ -145,8 +145,21 @@
       </form>
     </section>
     <footer>
-      <p>© 2026 Your School Name. All Rights Reserved.</p>
+      <p>© 2026 British International School. All Rights Reserved.</p>
     </footer>
+    <div class="modal" id="applyModal">
+  <div class="modal-box">
+    <h2>Apply Now</h2>
+    <form id="applyForm">
+      <input type="text" placeholder="Student Name" required>
+      <input type="text" placeholder="Grade" required>
+      <input type="email" placeholder="Parent Email" required>
+      <button type="submit">Submit</button>
+      <button type="button" class="close">Close</button>
+    </form>
+  </div>
+</div>
+
     <script>
       const slides = document.querySelectorAll(".slide");
       let current = 0;
@@ -159,5 +172,66 @@
 
       setInterval(nextSlide, 4000);
     </script>
+  <script>
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll(".nav-links a");
+
+  function activateLink() {
+    let current = "";
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 120; // header height
+      const sectionHeight = section.offsetHeight;
+
+      if (
+        window.scrollY >= sectionTop &&
+        window.scrollY < sectionTop + sectionHeight
+      ) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    // Special fix for bottom of page (Contact issue)
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      current = sections[sections.length - 1].id;
+    }
+
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === "#" + current) {
+        link.classList.add("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", activateLink);
+  activateLink();
+</script>
+
+
+<script>
+  const modal = document.getElementById("applyModal");
+  document.querySelector(".nav-cta").addEventListener("click", (e)=>{
+    e.preventDefault();
+    modal.classList.add("show");
+  });
+  modal.querySelector(".close").addEventListener("click", ()=> modal.classList.remove("show"));
+  document.getElementById("applyForm").addEventListener("submit", (e)=>{
+    e.preventDefault();
+    alert("Application submitted! (demo)");
+    modal.classList.remove("show");
+    e.target.reset();
+  });
+</script>
+<script>
+  const contactForm = document.querySelector("#contact form");
+  contactForm.addEventListener("submit", (e)=>{
+    e.preventDefault();
+    alert("Thanks! We will contact you soon.");
+    contactForm.reset();
+  });
+</script>
+
+
   </body>
 </html>

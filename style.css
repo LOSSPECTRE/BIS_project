@@ -162,7 +162,7 @@ footer {
 #why-choose-us {
   padding: 80px 20px;
   text-align: center;
-  background: #f9fafc;
+  background: white;
 }
 
 #why-choose-us h2 {
@@ -310,6 +310,29 @@ footer {
   border-radius: 8px;
   padding: 10px 14px;
   border-bottom: none !important;
+}
+section {
+  scroll-margin-top: var(--header-h);
+}
+.nav-links a.active {
+  border-bottom-color: white;
+}
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  place-items: center;
+  z-index: 2000;
+}
+.modal.show {
+  display: grid;
+}
+.modal-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: min(420px, 92%);
 }
 
 html {
